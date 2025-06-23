@@ -34,6 +34,18 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+        td1: td1 {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "ATD: Space/Return Enter";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp ENTER>;
+        };
+        td2: td2 {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "ATD: ESC/Shift";
+            #binding-cells = <0>;
+            bindings = <&kp ESC>, <&kp RIGHT_SHIFT>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -58,11 +70,11 @@
             bindings = <
 &kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
 &td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp ESC
-                         &kp LGUI  &mo 1  &lt 3 SPACE                                               &lt 3 ENTER  &mo 2  &kp RALT
+&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp &td3
+                         &kp LGUI  &mo 1  &lt 3 LALT                                                &td1         &mo 2  &kp RALT
             >;
 
-             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
+             sensor-bindings = <&scroll_encoder>;
 
            
         };
@@ -76,7 +88,7 @@
                                          &trans        &trans        &trans                                                                          &kp INS          &kp DEL          &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
         };
 
         raise_layer {
