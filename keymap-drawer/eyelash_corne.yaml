@@ -1,7 +1,7 @@
 layout: {zmk_keyboard: eyelash_corne}
 layers:
   QWERTY:
-  - $$mdi:keyboard-tab$$
+  - $$mdi:keyboard-esc$$
   - Q
   - W
   - E
@@ -14,7 +14,7 @@ layers:
   - O
   - P
   - {t: '$$mdi:backspace$$', type: backspace}
-  - '&td0'
+  - $$mdi:keyboard-tab$$
   - A
   - S
   - D
@@ -29,7 +29,7 @@ layers:
   - L
   - {t: ;, s: ':'}
   - {t: '''', s: '"'}
-  - $$mdi:apple-keyboard-control$$
+  - '&td0'
   - Z
   - X
   - C
@@ -42,13 +42,13 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - '&td2'
-  - LGUI
+  - '&td0'
+  - '&td5'
   - NUMBER
   - '&td3'
   - '&td1'
   - SYMBOL
-  - '&td4'
+  - Fn
   NUMBER:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '1', s: '!'}
@@ -184,7 +184,7 @@ layers:
   - '&mkp MB5'
   - $$mdi:volume-off$$
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - $$mdi:backspace-reverse-outline$$
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:progress-download$$
   - {t: '$$mdi:backup-restore$$', type: bootloader}
@@ -195,4 +195,4 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - {type: held}
