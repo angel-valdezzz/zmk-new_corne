@@ -58,6 +58,12 @@
             #binding-cells = <0>;
             bindings = <&kp RALT>, <&kp RCTRL>;
         };
+        td5: td5 {
+            compatible = "zmk,behavior-tap-dance";
+            display-name = "ATD: RCTRL/LGUI";
+            #binding-cells = <0>;
+            bindings = <&kp RCTRL>, <&kp LGUI>;
+        };
     };
 
     rgb_encoder: rgb_encoder {
@@ -80,10 +86,10 @@
         default_layer {
             display-name = "QWERTY";
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T                               &kp UP                &kp Y        &kp U  &kp I      &kp O    &kp P     &kp BSPC
-&td0       &kp A  &kp S  &kp D     &kp F  &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT  &kp H        &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp SPACE              &kp DOWN              &kp N        &kp M  &kp COMMA  &kp DOT  &kp FSLH  &td2
-                         &kp LGUI  &mo 1  &td3                                                      &td1         &mo 2  &td4
+&kp ESC   &kp Q   &kp W   &kp E   &kp R   &kp T                               &kp UP                 &kp Y   &kp U   &kp I       &kp O     &kp P      &kp BSPC
+&kp TAB   &kp A   &kp S   &kp D   &kp F   &kp G                     &kp LEFT  &kp ENTER  &kp RIGHT   &kp H   &kp J   &kp K       &kp L     &kp SEMI   &kp SQT
+&td0      &kp Z   &kp X   &kp C   &kp V   &kp B        &kp SPACE              &kp DOWN               &kp N   &kp M   &kp COMMA   &kp DOT   &kp FSLH   &td0
+                          &td5    &mo 1   &td3                                                       &td1    &mo 2   &mo 3
             >;
 
              sensor-bindings = <&scroll_encoder>;
@@ -120,7 +126,7 @@
             bindings = <
 &studio_unlock  &kp F1      &kp F2     &kp F3       &kp F4     &kp F5                                  &mmv MOVE_UP                     &kp F6       &kp F7     &kp F8       &kp F9      &kp F10          &kp F11
 &trans          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4                &mmv MOVE_LEFT  &mkp LCLK       &mmv MOVE_RIGHT  &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN  &kp F12
-&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
+&trans          &sys_reset  &trans     &bootloader  &trans     &mkp MB5  &kp C_MUTE                    &mmv MOVE_DOWN                   &kp DEL      &trans     &bootloader  &sys_reset  &kp SCROLLLOCK   &kp PAUSE_BREAK
                                        &trans       &trans     &trans                                                                   &trans       &trans     &trans
             >;
 
